@@ -9,10 +9,12 @@ class StatesController < ApplicationController
 
   def show
     @state = State.find(params[:id])
+    @regs = @state.regs
   end
 
   def create
     @state = State.new(state_params)
+    
     if @state.save
       flash[:notice] = "Your state was saved successfully."
       redirect_to states_path
@@ -21,8 +23,10 @@ class StatesController < ApplicationController
       render :new
     end
   end
-end
 
-def state_params
-  params.require(:state).permit(:name)
+  private
+
+  def state_params
+    params.require(:state).permit(:name)
+  end
 end

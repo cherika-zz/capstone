@@ -1,3 +1,8 @@
+<!-- form_for needs an object and a path -->
+<!-- when we have a nested array, you're both giving it the path
+and the object that you want to use as the form_for (the reg) -->
+
+<!-- form_for is on new, but goes to create  -->
 <%= form_for [@state, @reg] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
