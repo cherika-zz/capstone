@@ -6,6 +6,9 @@ and the object that you want to use as the form_for (the reg) -->
 <%= form_for [@state, @reg] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.label :attachment %>
+  <%= f.file_field :attachment %>
+  <%= f.hidden_field :attachment_cache %>
 
   <%= f.submit "Save" %>
 <% end %>

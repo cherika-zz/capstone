@@ -13,7 +13,7 @@ class RegsController < ApplicationController
   def create
     @state = State.find(params[:state_id])
     @reg = @state.regs.build(regs_params)
-    
+
     if @reg.save
       flash[:notice] = "Saved successfully."
       # pathod methods create url strings; give method the id
@@ -27,6 +27,6 @@ class RegsController < ApplicationController
   private
 
   def regs_params
-    params.require(:reg).permit(:name)
+    params.require(:reg).permit(:name, :attachment)
   end
 end

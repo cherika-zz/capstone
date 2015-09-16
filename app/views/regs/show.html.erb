@@ -1,1 +1,4 @@
-<p><%= @reg.name %></p>
+
+<!-- the first argument is just the text,
+the second creates the href attribute on an a tag, which is the link -->
+<p><%= link_to @reg.name, @reg.attachment.url %></p>
