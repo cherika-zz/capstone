@@ -1,2 +1,22 @@
-<h1>Applications#index</h1>
-<p>Find me in app/views/applications/index.html.erb</p>
+<%= link_to "New TNC application", new_state_application_path(@state), class: 'btn btn-success' %>
+
+<div class="row">
+  <div class="col-md-8">
+    <% @applications.each do |application| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to application.name, [@state, application] %>
+
+            <%# if application.destroy? %>
+              <%= link_to "Delete", state_application_path(@state, application), method: :delete, class: 'btn btn-danger',
+              data: { confirm: 'Are you sure you want to delete this?'} %>
+            <%# end %>
+
+
+          </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

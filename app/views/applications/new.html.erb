@@ -1,2 +1,9 @@
-<h1>Applications#new</h1>
-<p>Find me in app/views/applications/new.html.erb</p>
+<%= form_for [@state, @application] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :attachment %>
+  <%= f.file_field :attachment %>
+  <%= f.hidden_field :attachment_cache %>
+
+  <%= f.submit "Save" %>
+<% end %>
