@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TNC Tracker</title>
+    <div class="center">
+      <h1>TNC Tracker</h1>
+    </div>
+    </div>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
@@ -10,10 +13,11 @@
   <body>
 
     <div class='container'>
+    <div class="tabbable tabs-left">
       <ul class='nav nav-tabs'>
-        
       <!-- tabs -->
-        <li><%= link_to "States", states_path %></li>
+        <li><%= link_to "Home", root_path, "class" => "active", "data-toggle" => "tab" %></li>
+        <li><%= link_to "States", states_path, "data-toggle" => "tab" %></li>
 
         <div class="pull-right user-info">
           <% if current_user %>
