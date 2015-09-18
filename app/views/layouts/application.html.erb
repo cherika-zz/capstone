@@ -16,8 +16,8 @@
     <div class="tabbable tabs-left">
       <ul class='nav nav-tabs'>
       <!-- tabs -->
-        <li><%= link_to "Home", root_path, "class" => "active", "data-toggle" => "tab" %></li>
-        <li><%= link_to "States", states_path, "data-toggle" => "tab" %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "States", states_path %></li>
 
         <div class="pull-right user-info">
           <% if current_user %>
