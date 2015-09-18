@@ -1,0 +1,2 @@
+class RegPolicy < ApplicationPolicy
+end

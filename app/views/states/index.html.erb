@@ -2,7 +2,9 @@
 
 <div class="row">
   <div class="col-md-8">
-    <%= link_to "New State", new_state_path, class: 'btn btn-success' %>
+    <% if policy(State.new).create? %>
+      <%= link_to "New State", new_state_path, class: 'btn btn-success' %>
+    <% end %>
   </div>
 </div>
 

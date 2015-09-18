@@ -21,6 +21,33 @@ end
   application.save
 end
 
+admin = User.new(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'password',
+   role:     'admin'
+ )
+ admin.skip_confirmation!
+ admin.save!
+
+ editor = User.new(
+    name:     'Editor User',
+    email:    'editor@example.com',
+    password: 'password',
+    role:     'editor'
+  )
+  editor.skip_confirmation!
+  editor.save!
+
+  viewer = User.new(
+     name:     'Viewer User',
+     email:    'viewer@example.com',
+     password: 'password',
+     role:     'viewer'
+   )
+   viewer.skip_confirmation!
+   viewer.save!
+
 
 puts "#{State.count} states created"
 puts "#{Reg.count} regs created"
