@@ -1,12 +1,16 @@
-<h1>States<h2>
-
-<div class="row">
-  <div class="col-md-8">
-    <% if policy(State.new).create? %>
-      <%= link_to "New State", new_state_path, class: 'btn btn-success' %>
-    <% end %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand">States</div>
+      <div class="navbar-right">
+        <% if policy(State.new).create? %>
+          <%= link_to "New State", new_state_path, class: 'btn btn-default navbar-btn' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+</nav>
+
 
 <div class="row">
   <div class="col-md-8">
