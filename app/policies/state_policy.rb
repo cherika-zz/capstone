@@ -10,4 +10,12 @@ class StatePolicy < ApplicationPolicy
   def new?
     create?
   end
+
+  def update?
+    user.present? && (user.admin? || user.editor?)
+  end
+
+  def edit?
+    update?
+  end
 end

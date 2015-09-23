@@ -15,7 +15,7 @@ class ApplicationPolicy
   end
 
   def create?
-    user.present? && (record.user == user.admin? || user.editor?)
+    user.present? && (user.admin? || user.editor?)
   end
 
   def new?
@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    user.present? && (record.user == user.admin? || user.editor?)
+    user.present? && (user.admin? || user.editor?)
   end
 
   def edit?

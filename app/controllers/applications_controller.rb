@@ -4,6 +4,11 @@ class ApplicationsController < ApplicationController
     @applications = @state.applications
   end
 
+  def show
+    @state = State.find(params[:state_id])
+    @application = Application.find(params[:id])
+  end
+
   def new
     @state = State.find(params[:state_id])
     @application = Application.new
@@ -23,9 +28,22 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  def show
+  def edit
     @state = State.find(params[:state_id])
     @application = Application.find(params[:id])
+    authorize @application
+  end
+
+  def update
+    @state = State.find(params[:state_id])
+    @application = Application.find(params[:id])
+    authorize @application
+    if @application.update_attributes(app_params)
+      redirect_to state_applications_path
+    else
+      flash[:error] = "There was an error. Please try again."
+      render :edit
+    end
   end
 
   def destroy

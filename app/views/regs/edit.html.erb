@@ -1,0 +1,9 @@
+<%= form_for [@state, @reg] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :attachment %>
+  <%= f.file_field :attachment %>
+  <%= f.hidden_field :attachment_cache %>
+
+  <%= f.submit "Save" %>
+<% end %>

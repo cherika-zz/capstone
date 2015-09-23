@@ -1,7 +1,9 @@
 class StatesController < ApplicationController
   def index
     @states = State.all
+    @state = State.new
     authorize @states
+    authorize @state
   end
 
   def new

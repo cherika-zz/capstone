@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :states
+  has_many :regs
+  has_many :applications
 
   def admin?
     role == 'admin'

@@ -1,4 +1,7 @@
-<%= link_to "New TNC application", new_state_application_path(@state), class: 'btn btn-success' %>
+<% if policy(Application.new).create? %>
+  <%= link_to "New TNC application", new_state_application_path(@state), class: 'btn btn-success' %>
+<% end %>
+
 
 <div class="row">
   <div class="col-md-8">
@@ -8,11 +11,14 @@
           <h4 class="media-heading">
             <%= link_to application.name, [@state, application] %>
 
-            <%# if application.destroy? %>
+            <% if policy(application).destroy? %>
               <%= link_to "Delete", state_application_path(@state, application), method: :delete, class: 'btn btn-danger',
               data: { confirm: 'Are you sure you want to delete this?'} %>
-            <%# end %>
+            <% end %>
 
+            <% if policy(application).edit? %>
+              <%= link_to "Edit", edit_state_application_path(@state, application), class: 'btn btn-default' %>
+            <% end %>
 
           </h4>
         </div>
