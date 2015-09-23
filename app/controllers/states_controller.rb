@@ -46,6 +46,18 @@ class StatesController < ApplicationController
       end
     end
 
+    def destroy
+      @state = State.find(params[:id])
+      authorize @state
+      if @state.destroy
+        flash[:notice] = "Deleted successfully."
+        redirect_to states_path
+      else
+        flash[:notice] = "There was an error. Please try again."
+        render :new
+      end
+    end
+
   private
 
   def state_params

@@ -11,10 +11,13 @@ user-info {
   margin-top: 5px;
 }
 
+
+
 .btn-default {
 	background: #F5F5DC;
-	border: 1px solid black;
 	border-radius: 5px;
+	font-size: 17px;
+	color: black;
 }
 
 .btn-success {
@@ -24,4 +27,14 @@ user-info {
 
 .btn-danger {
 	background: grey;
+}
+
+.glyphicon-pencil {
+	color: grey;
+	margin: 8px;
+}
+
+.glyphicon-remove {
+	color: #FA8072;
+	margin: 8px;
 }
