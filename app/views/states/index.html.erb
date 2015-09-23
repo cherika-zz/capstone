@@ -1,14 +1,12 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <!-- <div class="navbar-header"> -->
       <div class="navbar-brand">States</div>
-      <div class="navbar-right">
         <% if policy(State.new).create? %>
-          <%= link_to "New State", new_state_path, class: 'btn btn-default navbar-btn' %>
+          <%= link_to "New State", new_state_path, class: 'pull-right btn btn-default navbar-btn'%>
         <% end %>
       </div>
     </div>
-  </div>
 </nav>
 
 
