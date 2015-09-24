@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150923201153) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "attachment"
-    t.date     "due_date"
+    t.datetime "due_date"
     t.string   "frequency"
     t.integer  "user_id"
   end

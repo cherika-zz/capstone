@@ -32,6 +32,8 @@ class ApplicationsController < ApplicationController
     @state = State.find(params[:state_id])
     @application = Application.find(params[:id])
     authorize @application
+    @due_date = @application.due_date
+    @frequency = @application.frequency
   end
 
   def update
@@ -61,6 +63,6 @@ class ApplicationsController < ApplicationController
   private
 
   def app_params
-    params.require(:application).permit(:name, :attachment)
+    params.require(:application).permit(:name, :attachment, :due_date, :frequency)
   end
 end

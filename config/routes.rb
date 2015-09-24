@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :regs
     resources :applications
   end
+
+  resources :calendar
 end

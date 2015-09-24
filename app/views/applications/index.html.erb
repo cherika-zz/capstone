@@ -3,21 +3,29 @@
 <% end %>
 
 
-<div class="row">
-  <div class="col-md-8">
+<div class="container">
+  <div class="col-md-11">
     <% @applications.each do |application| %>
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
             <%= link_to application.name, [@state, application] %>
 
+            <% if application.frequency != nil %>
+              <%= application.frequency %>
+            <% end %>
+
+            <% if application.due_date != nil %>
+              <%= application.due_date.to_date %>
+            <% end %>
+
             <% if policy(application).destroy? %>
-              <%= link_to "Delete", state_application_path(@state, application), method: :delete, class: 'btn btn-danger',
+              <%= link_to "", state_application_path(@state, application), method: :delete, class: 'pull-right glyphicon glyphicon-remove',
               data: { confirm: 'Are you sure you want to delete this?'} %>
             <% end %>
 
             <% if policy(application).edit? %>
-              <%= link_to "Edit", edit_state_application_path(@state, application), class: 'btn btn-default' %>
+              <%= link_to "", edit_state_application_path(@state, application), class: 'pull-right glyphicon glyphicon-pencil' %>
             <% end %>
 
           </h4>

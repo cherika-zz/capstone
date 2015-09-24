@@ -1,6 +1,13 @@
 <%= form_for [@state, @application] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+
+  <%= f.label :due_date %>
+  <%= f.text_field :due_date, :placeholder => 'yyyy-mm-dd' %>
+
+  <%= f.label :frequency %>
+  <%= f.text_field :frequency %>
+
   <%= f.label :attachment %>
   <%= f.file_field :attachment %>
   <%= f.hidden_field :attachment_cache %>
