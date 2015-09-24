@@ -1,5 +1,11 @@
 <p><%= link_to @application.name, @application.attachment.url %></p>
-<p>Frequency: <%=  @application.frequency %></p>
-<p>Renewal Due Date: <%=  @application.due_date.to_date %></p>
+
+<% if @application.frequency != nil %>
+  <p>Frequency: <%=  @application.frequency %></p>
+<% end %>
+
+<% if @application.due_date != nil %>
+  <p>Renewal Due Date: <%=  @application.due_date.to_date %></p>
+<% end %>
 
 <%= link_to "#{@state.name} TNC Applications", state_applications_path, class: 'btn btn-default' %>
