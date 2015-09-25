@@ -1,5 +1,6 @@
 class CalendarController < ApplicationController
   def index
-    @states = State.all
+    @current_month = Date.today.strftime('%B')
+    @applications = Application.current_month
   end
 end
