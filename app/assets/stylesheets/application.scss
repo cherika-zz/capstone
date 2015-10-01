@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "fullcalendar";
 @import "welcome";
 
 
@@ -10,8 +11,6 @@ user-info {
 .nav {
   margin-top: 5px;
 }
-
-
 
 .btn-default {
 	background: #F5F5DC;
@@ -38,3 +37,8 @@ user-info {
 	color: #FA8072;
 	margin: 8px;
 }
+
+#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}

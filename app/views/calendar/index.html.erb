@@ -5,16 +5,6 @@
 
 
   <div class="col-md-11">
-    <% @applications.each do |application| %>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%= application.name %>
-            <%= application.due_date.to_date if application.due_date %>
-            <%= application.frequency %>
-          </h4>
-        </div>
-      </div>
-    <% end %>
+    <div id='calendar'></div>
   </div>
 </div>
