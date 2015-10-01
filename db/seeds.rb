@@ -16,7 +16,8 @@ end
 20.times do |n|
   application = Application.new(
     name: "TNC Application ##{n}",
-    state: states.sample
+    state: states.sample,
+    due_date: Date.today + rand(1..15).days
   )
   application.save
 end

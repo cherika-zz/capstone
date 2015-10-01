@@ -6,20 +6,18 @@ $(document).ready(function() {
       center: 'title',
       right: 'month,basicWeek,basicDay'
     },
-    defaultDate: '2015-02-12',
     editable: true,
     eventLimit: true, // allow "more" link when too many events
-    events: [
+    eventSources: [
       {
-        title: 'All Day Event',
-        start: '2015-02-01'
+        url: '/events?state_id=2',
+        color: 'blue'
       },
       {
-        title: 'Long Event',
-        start: '2015-02-07',
-        end: '2015-02-10'
+        url: '/events?state_id=3',
+        color: 'green'
       }
-    ]
+    ],
   });
 
 });
