@@ -8,14 +8,11 @@ $(document).ready(function() {
     },
     editable: true,
     eventLimit: true, // allow "more" link when too many events
+
+    // event source key
     eventSources: [
       {
-        url: '/events?state_id=2',
-        color: 'blue'
-      },
-      {
-        url: '/events?state_id=3',
-        color: 'green'
+        url: '/events',
       }
     ],
   });
