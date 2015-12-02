@@ -3,7 +3,7 @@ class StatesController < ApplicationController
     @states = State.all
     @state = State.new
     authorize @states
-    authorize @state
+    # authorize @state
   end
 
   def new
