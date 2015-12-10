@@ -10,4 +10,10 @@ Rails.application.routes.draw do
 
   resources :calendar
   resources :events
+
+  namespace :admin do
+    namespace :controllers do
+      resources :users
+    end
+  end
 end
